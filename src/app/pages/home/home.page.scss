@@ -1,0 +1,43 @@
+ion-header.title-header {
+    ion-toolbar{
+        font-family:'Franklin Gothic Medium', cursive !important;
+        ion-title{
+            letter-spacing: 2px;
+            font-size: 1,8rem !important;
+        }
+    }
+    ion-segment{
+        background: rgb(73, 73, 95);
+        ion-segment-button{
+            font-size: 1rem;
+            color: rgb(87, 148, 26);
+            --color-cheked: #fff;
+        }
+    }
+
+.hora{
+    color: #cccccc;
+}
+
+ion-content{
+    ion-list{
+        ion-list-header{
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        ion-item{
+            margin-top: 2vh;
+            ion-labe{
+                font-size: 1.2rem;
+                p{
+                    margin-top: 3px;
+                }
+            }
+            ion-text{
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+}

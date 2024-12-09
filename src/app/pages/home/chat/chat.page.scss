@@ -1,0 +1,15 @@
+ion-content{
+    ion-lis{
+        background: transparent;
+    }
+}
+ion-footer{
+    ion-toolbar{
+        padding: 0 3px;
+        ion-textarea{
+            border:2px solid rgb(64, 158, 92);
+            border-radius: 20px;
+            margin: 0.5vh 0;
+        }
+    }
+}

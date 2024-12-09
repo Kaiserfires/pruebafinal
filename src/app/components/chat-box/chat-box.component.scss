@@ -1,0 +1,113 @@
+ion-item{
+    background: transparent;
+    --padding-start: 8px;
+    --padding-end: 0px;
+    --ion-safe-area-left:0px;
+    min-height: 32px;
+    border-width: 0px;
+    ion-label{
+        position: relative;
+        border-radius: 12px;
+        padding: 4px 8px;
+        margin-top: 12px;
+        max-width: 70%;
+        ion-text{
+            font-weight: 400;
+            font-size: 0.9rem;
+            &:after{
+                content: '';
+                width: 52px;
+                height: 12px;
+                display: inline-block;
+                vertical-align: top;
+                visibility: hidden;
+                font-size: 0.75rem;
+            }
+        }
+        ion-note{
+            position: absolute;
+            display: flex;
+            right: 0;
+            bottom: 0;
+            padding: 4px 8px 4px 4px;
+            line-height: 16px;
+            pointer-events: auto;
+            color: rgb(44, 65, 65);
+        }
+    }
+}
+
+.sender{
+    &::after{
+        content: "";
+        position: absolute;
+        border: 0 solid  transparent;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 0;
+        border-top: 9px solid aqua;
+        border-radius: 0 20px 0;
+        width: 15px;
+        height: 30px;
+        transform: rotate(112deg);
+        bottom: -4px;
+        left: -4px;
+    }
+    ion-label{
+        margin-left:8px;
+        background-color: rgb(72, 124, 124);
+        ion-text{
+            &:after{
+                width: 72px !important;
+            }
+        }
+        ion-note{
+            small{
+                margin-right: 2px;
+                line-height: 16px;
+                color: aqua;
+            }
+            ion-icon{
+                font-size: 16px;
+            }
+    }
+    }
+}
+
+.user{
+    &::after{
+        content: "";
+        position: absolute;
+        border: 0 solid  transparent;
+        border-bottom-color: transparent;
+        border-bottom-style: solid;
+        border-bottom-width: 0;
+        border-bottom: 9px solid aqua;
+        border-radius: 20px 0;
+        width: 15px;
+        height: 30px;
+        transform: rotate(50deg);
+        bottom: 0;
+        right: 0;
+    }
+    ion-label{
+        margin-left:8px;
+        background-color: rgb(72, 124, 124);
+        color: #fff;
+        ion-text{
+            &:after{
+                width: 72px !important;
+            }
+        }
+        ion-note{
+            small{
+                margin-right: 2px;
+                line-height: 16px;
+                color: aqua;
+            }
+            ion-icon{
+                font-size: 16px;
+            }
+    }
+    }
+}
