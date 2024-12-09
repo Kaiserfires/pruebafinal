@@ -60,8 +60,8 @@ export class ApiService {
       dataRef=q;      
     }
     let doc_data;
-    if(id) doc_data=docData<any>(dataRef,{idField:'id'});
-    else doc_data=docData<any>(dataRef);
+    if(id) doc_data = docData<any>(dataRef,{idField:'id'});
+    else doc_data = docData<any>(dataRef);
     return doc_data;
 
   }

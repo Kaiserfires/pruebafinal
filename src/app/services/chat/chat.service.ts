@@ -92,4 +92,23 @@ export class ChatService {
     .pipe(map((arr:any) => arr.reverse()));
   }
 
+  async sendMessage(chatId, msg){
+    try{
+      console.log('cargando');
+      const new_message={
+        menssage: msg,
+        sender: this.currentUserId,
+        createdAT: new Date()
+      };
+      console.log('este mensaje',msg);
+      console.log(chatId);
+      if (chatId) {
+        await this.api.addDocument(`chats/${chatId}/messages`, new_message);
+        
+      }
+    }catch(e){
+      throw(e);
+    }
+  }
+
 }

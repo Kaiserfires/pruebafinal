@@ -19,6 +19,11 @@ export class HomePage implements OnInit {
   open_new_chat=false;
   users: Observable<any[]>;
   chatRooms: Observable<any[]>;
+  model={
+    icon:'chatbubbles-outline',
+    title:'No hay salas de chat',
+    color:'dark',
+  };
 
   /*users=[
     {id:1, name:'Roberto', photo:'https://i.pravatar.cc/335'},

@@ -18,10 +18,10 @@ export class ChatPage implements OnInit {
   mensaje:string;
   isLoading:boolean;
   model={
-    icon:'chatbubbbles-outline',
-    title:'No conversation',
+    icon:'chatbubbles-outline',
+    title:'No Conversation',
     color:'Warning',
-  }
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -31,12 +31,12 @@ export class ChatPage implements OnInit {
 
   ngOnInit() {
     const data: any = this.route.snapshot.queryParamMap;
-    console.log('data: ', data);
-    this.name=data?.name||'nombre predeterminado';
+    console.log('data importante: ', data);
+    //this.name= data.params.name||'nombre predeterminado';
     console.log('nombre asignado: ',this.name);
-    /*if (data?.name) {
-      this.name=data?.name;
-    }*/
+    if (data.params.name) {
+      this.name=data.params.name;
+    }
     const id = this.route.snapshot.paramMap.get('id');
     console.log('check id: ',id);
     if (!id) {
@@ -59,8 +59,20 @@ export class ChatPage implements OnInit {
   }
 
 
-  enviarmensaje(){
-
+  async enviarMensaje(){
+    if (!this.mensaje || this.mensaje?.trim()=='') {
+      return;      
+    }
+    try{
+      this.isLoading=true;
+      await this.chatService.sendMessage(this.id, this.mensaje);
+      this.mensaje='';
+      this.isLoading=false;
+      this.scrollToBottom();
+    }catch(e){
+      this.isLoading=false;
+      console.log(e);
+    }
   }
 
 }

@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content>
+
+  <!--<app-empty-screen
+  *ngIf="(chats|async)?.length==0" 
+  [model]="model">
+  </app-empty-screen> -->
   
   <ion-list
   lines="none"
@@ -30,7 +35,7 @@
     [(ngModel)]="mensaje">
   </ion-textarea>
   <ion-buttons slot="end">
-    <ion-fab-button *ngIf="!isLoading" size="small" color="primary" (click)="enviarmensaje()">
+    <ion-fab-button *ngIf="!isLoading" size="small" color="primary" (click)="enviarMensaje()">
       <ion-icon name="send"></ion-icon>
     </ion-fab-button>
     <ion-fab-button *ngIf="isLoading" size="small" color="primary">
