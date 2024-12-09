@@ -45,7 +45,7 @@ export class ChatPage implements OnInit {
     }
     this.id=id;
     this.chatService.getChatRoomMessages(this.id);
-    this.chats=this.chatService.selectedChatRoomMessages;
+    this.chats= this.chatService.selectedChatRoomMessages;
     console.log(this.chats);  
   }
 

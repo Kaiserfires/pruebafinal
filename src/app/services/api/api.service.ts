@@ -50,6 +50,11 @@ export class ApiService {
     }
     
     const collection_data =collectionData<any>(dataRef, {idField: 'id'});
+    collection_data.subscribe({
+      next:(data)=> console.log('datos recuperados: ',data),
+      error:(err)=> console.log('error recuperando datos: ',err),
+    });
+    console.log('estos son lso mensajes: ',collection_data);
     return collection_data;
   }
 

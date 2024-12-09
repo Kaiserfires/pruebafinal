@@ -89,7 +89,10 @@ export class ChatService {
       `chats/${chatRoomId}/messages`,
       this.api.orderByQuery('createdAt', 'desc')
     )
-    .pipe(map((arr:any) => arr.reverse()));
+    .pipe(map((arr: any) => {
+      console.log('Mensajes recuperados antes de invertir:', arr);
+      return arr.reverse();
+    }));
   }
 
   async sendMessage(chatId, msg){
@@ -100,11 +103,12 @@ export class ChatService {
         sender: this.currentUserId,
         createdAT: new Date()
       };
-      console.log('este mensaje',msg);
+      console.log('este mensaje',msg ,this.currentUserId);
       console.log(chatId);
       if (chatId) {
+        console.log('esta enviado mensaje',msg ,this.currentUserId);
         await this.api.addDocument(`chats/${chatId}/messages`, new_message);
-        
+        console.log('se envio mensaje',msg ,this.currentUserId);
       }
     }catch(e){
       throw(e);
